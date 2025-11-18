@@ -1,9 +1,10 @@
 import MainLayout from "./layout/MainLayout";
+import AboutMe from './components/AboutMe'
 
 function App() {
   return (
     <MainLayout>
-      <h1>Welcome to My Portfolio</h1>
+      <AboutMe/>
     </MainLayout>
   );
 }
