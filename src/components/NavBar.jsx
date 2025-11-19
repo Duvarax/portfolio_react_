@@ -7,7 +7,7 @@ function NavBar() {
   return (
     <nav className="w-full max-w-7xl flex items-center md:justify-between sticky top-0 z-10 text-white md:px-8 md:py-4 px-4 py-3">
       {/* Logo / Nombre */}
-      <h1 className="font-mono tracking-wider hover:drop-shadow-[0_0_10px_rgb(0,195,255)] cursor-pointer hover:scale-103 transition-all duration-300 flex-1">
+      <h1 className="font-mono  tracking-wider hover:drop-shadow-[0_0_10px_rgb(0,195,255)] cursor-pointer hover:scale-103 transition-all duration-300 sm:flex-1 md:flex-0">
         Duvara
       </h1>
 
@@ -25,7 +25,7 @@ function NavBar() {
           isOpen ? "flex" : "hidden"
         }`}
       >
-        {["Inicio", "Proyectos", "Estudios", "Noticias", "Contacto"].map(
+        {["Inicio", "Proyectos", "Estudios", "Contacto"].map(
           (item, i) => (
             <li
               key={i}

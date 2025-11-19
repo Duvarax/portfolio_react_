@@ -1,11 +1,14 @@
 import MainLayout from "./layout/MainLayout";
 import AboutMe from './components/AboutMe'
-
+import Home from "./components/Home";
+import { BrowserRouter as BrowserRouter } from "react-router";
 function App() {
   return (
-    <MainLayout>
-      <AboutMe/>
-    </MainLayout>
+    <BrowserRouter>
+      <MainLayout>
+        <Home/>
+      </MainLayout>
+    </BrowserRouter>
   );
 }
 

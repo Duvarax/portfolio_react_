@@ -7,13 +7,18 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* SUS */
   width: 100vw;
 }
 h1 {
   color: rgb(0, 195, 255);
   font-weight: bolder;
   font-size: 2.5rem;
+}
+
+h2{
+  color: rgb(0, 195, 255);
+  font-weight: bold;
+  font-size: 1.4rem;
 }
 
 @media (max-width: 768px) {

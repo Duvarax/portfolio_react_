@@ -6,10 +6,10 @@ import Navtest from "../components/navtest";
 function MainLayout({ children }) {
   return (
     <div className="w-full flex flex-col items-center justify-between min-h-screen">
-      <div className="w-full flex justify-center">
+      <div className="w-full h-fit flex justify-center mb-5">
         <NavBar />
       </div>
-      <div className="max-w-7xl w-full px-4">
+      <div className="max-w-7xl w-full  md:py-30 px-4 flex flex-col items-center justify-center">
         <main>{children}</main>
       </div>
       <Footer />
