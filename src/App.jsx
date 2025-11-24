@@ -1,7 +1,7 @@
 import MainLayout from "./layout/MainLayout";
-import AboutMe from './components/AboutMe'
 import Home from "./components/Home";
-import { BrowserRouter as BrowserRouter } from "react-router";
+import ProjectDetail from "./components/ProjectDetail";
+import { BrowserRouter, Routes, Route } from "react-router";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -28,9 +28,10 @@ function App() {
 
   return (
     <BrowserRouter>
-      <MainLayout>
-        <Home/>
-      </MainLayout>
+      <Routes>
+        <Route path="/" element={<MainLayout><Home /></MainLayout>} />
+        <Route path="/proyecto/:id" element={<MainLayout><ProjectDetail /></MainLayout>} />
+      </Routes>
     </BrowserRouter>
   );
 }

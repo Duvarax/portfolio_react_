@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Mail, User, MessageSquare, Send } from 'lucide-react';
 import Button from './Button';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -9,6 +12,14 @@ function Contact() {
   });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+      mirror: true
+    });
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -44,14 +55,20 @@ function Contact() {
   };
 
   return (
-    <div className="w-full md:min-w-5xl mx-auto ">
-      <h2 className="text-3xl font-bold text-white mb-2 text-center">Contactame</h2>
-      <p className='opacity-50 text-center mb-8'>Puedes contactarme a través del formulario o directamente por correo</p>
+    <div className="w-full md:min-w-5xl mx-auto">
+      <div data-aos="fade-down">
+        <h2 className="text-3xl font-bold text-white mb-2 text-center">Contactame</h2>
+        <p className='opacity-50 text-center mb-8'>Puedes contactarme a través del formulario o directamente por correo</p>
+      </div>
 
-      <form onSubmit={handleSubmit} className="bg-[rgba(0,0,49,0.55)] border border-[rgb(0,195,255)]/20 backdrop-blur-md rounded-xl p-8 space-y-6">
+      <form 
+        onSubmit={handleSubmit} 
+        data-aos="fade-up"
+        className="bg-[rgba(0,0,49,0.55)] border border-[rgb(0,195,255)]/20 backdrop-blur-md rounded-xl p-8 space-y-6"
+      >
         
         {/* Nombre */}
-        <div>
+        <div data-aos="fade-up" data-aos-delay="100">
           <label className="flex items-center gap-2 text-white mb-2">
             <User size={18} className="text-[rgb(0,195,255)]" />
             Nombre
@@ -68,7 +85,7 @@ function Contact() {
         </div>
 
         {/* Email */}
-        <div>
+        <div data-aos="fade-up" data-aos-delay="200">
           <label className="flex items-center gap-2 text-white mb-2">
             <Mail size={18} className="text-[rgb(0,195,255)]" />
             Correo
@@ -85,7 +102,7 @@ function Contact() {
         </div>
 
         {/* Mensaje */}
-        <div>
+        <div data-aos="fade-up" data-aos-delay="300">
           <label className="flex items-center gap-2 text-white mb-2">
             <MessageSquare size={18} className="text-[rgb(0,195,255)]" />
             Mensaje
@@ -105,6 +122,8 @@ function Contact() {
         <button
           type="submit"
           disabled={loading}
+          data-aos="fade-up"
+          data-aos-delay="400"
           className="w-full bg-[rgb(0,195,255)]/20 hover:bg-[rgb(0,195,255)]/30 border border-[rgb(0,195,255)]/50 text-[rgb(0,195,255)] py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition duration-300 disabled:opacity-50"
         >
           <Send size={18} />
@@ -113,14 +132,14 @@ function Contact() {
 
         {/* Mensaje de éxito */}
         {success && (
-          <div className="bg-green-500/20 border border-green-500/50 text-green-300 p-4 rounded-lg text-center">
+          <div 
+            data-aos="fade-in"
+            className="bg-green-500/20 border border-green-500/50 text-green-300 p-4 rounded-lg text-center"
+          >
             ¡Mensaje enviado correctamente!
           </div>
         )}
       </form>
-      <div>
-       
-      </div>
     </div>
   )
 }

@@ -1,6 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Studies() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      mirror: false
+    });
+  }, []);
+
   const studies = [
     {
       title: "Tecnicatura en Desarrollo de Software",
@@ -18,12 +28,17 @@ function Studies() {
 
   return (
     <div className="w-full px-4">
-      <h2 className="text-3xl font-bold text-center text-white ">Estudios</h2>
-      <p className='text-center opacity-50 mb-8'> Aqui puedes ver mis estudios</p>
+      <div data-aos="fade-down">
+        <h2 className="text-3xl font-bold text-center text-white">Estudios</h2>
+        <p className='text-center opacity-50 mb-8'>Aqui puedes ver mis estudios</p>
+      </div>
+      
       <div className="grid gap-6">
         {studies.map((study, i) => (
           <div 
-            key={i} 
+            key={i}
+            data-aos="fade-up"
+            data-aos-delay={i * 100}
             className="bg-[rgba(0,0,49,0.55)] p-6 rounded-xl border border-[rgb(0,195,255)]/20 backdrop-blur-md hover:border-[rgb(0,195,255)]/40 transition-all duration-300"
           >
             <h3 className="text-xl font-semibold text-[rgb(0,195,255)] drop-shadow-[0_0_6px_rgb(0,195,255)]">
@@ -34,9 +49,7 @@ function Studies() {
             <p className="text-gray-200 mt-3 leading-relaxed opacity-50">{study.description}</p>
           </div>
         ))}
-        
       </div>
-      
     </div>
   )
 }
