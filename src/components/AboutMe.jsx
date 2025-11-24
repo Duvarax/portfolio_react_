@@ -2,15 +2,15 @@ import React from "react";
 import person from "../assets/person.jpg";
 function AboutMe() {
   return (
-    <div className="flex items-center gap-10 w-full text-white bg-[rgba(0,0,49,0.35)] p-6 rounded-xl shadow-xl 
-                    border border-[rgb(0,195,255)]/10 
+    <div className="flex flex-col md:flex-row items-center gap-10 w-full text-white bg-[rgba(0,0,49,0.55)] p-6 rounded-xl shadow-xl 
+                    border border-[rgb(0,195,255)]/20 
                     backdrop-blur-md
-                    max-w-3xl mx-auto">
+                    md:max-w-4xl  mx-auto">
 
       
-      <img className="w-50 h-50 rounded-2xl self-start" src={person} alt="" />
+      <img className="md:w-150 md:h-50 w-70 h-auto rounded-2xl " src={person} alt="" />
       <p className="text-sm md:text-lg leading-relaxed opacity-90">
-        Soy <span className="font-semibold text-[rgb(0,195,255)] drop-shadow-[0_0_6px_rgb(0,195,255)]">
+        Soy <span className="font-bold">Claudio Duvara</span> un <span className="font-semibold text-[rgb(0,195,255)] drop-shadow-[0_0_6px_rgb(0,195,255)]">
           desarrollador de software
         </span> recibido de la tecnicatura en desarrollo de software. 
         Tengo experiencia construyendo soluciones reales para pequeños negocios, 

@@ -4,10 +4,28 @@ import { Menu, X } from "lucide-react";
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setIsOpen(false);
+    }
+  };
+
+  const navItems = [
+    { label: "Inicio", id: "home" },
+    { label: "Estudios", id: "studies" },
+    { label: "Proyectos", id: "projects" },
+    { label: "Contacto", id: "contact" }
+  ];
+
   return (
-    <nav className="bg-transparent w-full max-w-7xl flex items-center md:justify-between z-10 text-white md:px-8  px-4 py-3">
+    <nav className="bg-transparent w-full max-w-7xl flex items-center md:justify-between z-10 text-white md:px-8 px-4 py-3">
       {/* Logo / Nombre */}
-      <h1 className="font-mono  tracking-wider hover:drop-shadow-[0_0_10px_rgb(0,195,255)] cursor-pointer hover:scale-103 transition-all duration-300 sm:flex-1 md:flex-0">
+      <h1 
+        className="nav-logo tracking-wider hover:drop-shadow-[0_0_10px_rgb(0,195,255)] cursor-pointer hover:scale-103 transition-all duration-300 flex-1 md:flex-0"
+        onClick={() => scrollToSection("home")}
+      >
         Duvara
       </h1>
 
@@ -25,17 +43,15 @@ function NavBar() {
           isOpen ? "flex" : "hidden"
         }`}
       >
-        {["Inicio", "Proyectos", "Estudios", "Contacto"].map(
-          (item, i) => (
-            <li
-              key={i}
-              className="relative cursor-pointer md:text-lg transition-all duration-300 hover:text-[rgb(0,195,255)] hover:drop-shadow-[0_0_10px_rgb(0,195,255)] after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[rgb(0,195,255)] hover:after:w-full after:transition-all after:duration-300"
-              onClick={() => setIsOpen(false)}
-            >
-              {item}
-            </li>
-          )
-        )}
+        {navItems.map((item) => (
+          <li
+            key={item.id}
+            className="relative cursor-pointer md:text-lg transition-all duration-300 hover:text-[rgb(0,195,255)] hover:drop-shadow-[0_0_10px_rgb(0,195,255)] after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[rgb(0,195,255)] hover:after:w-full after:transition-all after:duration-300"
+            onClick={() => scrollToSection(item.id)}
+          >
+            {item.label}
+          </li>
+        ))}
       </ul>
     </nav>
   );
