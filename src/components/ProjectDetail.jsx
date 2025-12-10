@@ -93,17 +93,7 @@ function ProjectDetail() {
 
         {/* Botones de acción */}
         <div className="flex gap-4 pt-6 border-t border-[rgb(0,195,255)]/20">
-          {proyecto.link && (
-            <a
-              href={proyecto.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[rgb(0,195,255)]/20 hover:bg-[rgb(0,195,255)]/30 border border-[rgb(0,195,255)]/50 text-[rgb(0,195,255)] py-3 px-6 rounded-lg transition duration-300 font-semibold"
-            >
-              <ExternalLink size={20} />
-              Ver proyecto
-            </a>
-          )}
+          
           {proyecto.github && (
             <a
               href={proyecto.github}
