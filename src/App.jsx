@@ -1,7 +1,7 @@
 import MainLayout from "./layout/MainLayout";
 import Home from "./components/Home";
 import ProjectDetail from "./components/ProjectDetail";
-import { BrowserRouter, Routes, Route } from "react-router";
+import { HashRouter, Routes, Route } from "react-router";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -27,12 +27,12 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<MainLayout><Home /></MainLayout>} />
         <Route path="/proyecto/:id" element={<MainLayout><ProjectDetail /></MainLayout>} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
