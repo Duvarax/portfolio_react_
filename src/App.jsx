@@ -27,12 +27,13 @@ function App() {
   }
 
   return (
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<MainLayout><Home /></MainLayout>} />
-        <Route path="/proyecto/:id" element={<MainLayout><ProjectDetail /></MainLayout>} />
-      </Routes>
-    </HashRouter>
+   <HashRouter basename="/">
+  <Routes>
+    <Route path="/" element={<MainLayout><Home /></MainLayout>} />
+    <Route path="/proyecto/:id" element={<MainLayout><ProjectDetail /></MainLayout>} />
+  </Routes>
+</HashRouter>
+
   );
 }
 

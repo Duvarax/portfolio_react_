@@ -1,6 +1,6 @@
 export const skills = [
     {name: "Python", icon: "./python.png"},
-    {name: ".NET", icon: "./.net.png"},
+    {name: ".NET", icon: "./net.png"},
     {name: "JavaScript", icon: "./icon.png"},
     {name: "React", icon: "./react.png"},
     {name: "Node.js", icon: "./nodejs.png"},
