@@ -1,32 +1,35 @@
-import React, { useEffect } from 'react'
-import { proyectos } from '../assets/proyectos';
-import { ExternalLink, Github } from 'lucide-react';
-import { skills } from '../assets/skills';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { Link } from 'react-router';
+import React, { useEffect } from "react";
+import { proyectos } from "../assets/proyectos";
+import { ExternalLink, Github } from "lucide-react";
+import { skills } from "../assets/skills";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { Link } from "react-router";
 
 function ProjectsGrid({ selectedSkill }) {
   useEffect(() => {
     AOS.init({
       duration: 800,
       once: false,
-      mirror: true
+      mirror: true,
     });
     AOS.refresh();
   }, [selectedSkill]);
 
-  const filteredProyectos = selectedSkill !== null 
-    ? proyectos.filter(proyecto => 
-        proyecto.skills.some(skill => skill.name === skills[selectedSkill].name)
-      )
-    : proyectos;
+  const filteredProyectos =
+    selectedSkill !== null
+      ? proyectos.filter((proyecto) =>
+          proyecto.skills.some(
+            (skill) => skill.name === skills[selectedSkill].name
+          )
+        )
+      : proyectos;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-5 w-full">
       {filteredProyectos.length > 0 ? (
         filteredProyectos.map((proyecto, idx) => (
-          <Link 
+          <Link
             to={`/proyecto/${proyecto.id}`}
             key={proyecto.id}
             data-aos="fade-up"
@@ -57,7 +60,10 @@ function ProjectsGrid({ selectedSkill }) {
               {/* Skills */}
               <div className="flex gap-2 mb-4 flex-wrap">
                 {proyecto.skills.map((skill, idx) => (
-                  <span key={idx} className="text-xs bg-[rgb(0,195,255)]/10 text-[rgb(0,195,255)] px-2 py-1 rounded">
+                  <span
+                    key={idx}
+                    className="text-xs bg-[rgb(0,195,255)]/10 text-[rgb(0,195,255)] px-2 py-1 rounded"
+                  >
                     {skill.name}
                   </span>
                 ))}
@@ -95,7 +101,9 @@ function ProjectsGrid({ selectedSkill }) {
         ))
       ) : (
         <div className="col-span-full text-center py-12" data-aos="fade">
-          <p className="text-gray-400 text-lg">No hay proyectos con esta tecnología</p>
+          <p className="text-gray-400 text-lg">
+            No hay proyectos con esta tecnología
+          </p>
         </div>
       )}
     </div>
