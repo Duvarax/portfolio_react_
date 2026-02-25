@@ -143,7 +143,7 @@ function ProjectDetail() {
                 {proyecto.images.map((imgUrl, idx) => (
                   <div
                     key={idx}
-                    className="w-full h-48 rounded-lg overflow-hidden border border-[rgb(0,195,255)]/20 cursor-pointer hover:shadow-[0_0_15px_rgba(0,195,255,0.3)] transition-shadow"
+                    className="w-full h-58 rounded-lg overflow-hidden border border-[rgb(0,195,255)]/20 cursor-pointer hover:shadow-[0_0_15px_rgba(0,195,255,0.3)] transition-shadow"
                     onClick={() => openModal(imgUrl)}
                     role="button"
                     aria-label={`${proyecto.title} - Imagen ${idx + 1}`}
@@ -151,7 +151,7 @@ function ProjectDetail() {
                     <img
                       src={imgUrl}
                       alt={`${proyecto.title} - Imagen ${idx + 1}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-fill"
                     />
                   </div>
                 ))}

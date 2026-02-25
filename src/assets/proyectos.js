@@ -14,10 +14,14 @@ export const proyectos = [
   },
   {
     id: 2,
-    title: "Proyecto Dos",
-    description: "Descripción del proyecto dos.",
-    imageUrl: "./imagen1.jpg",
-    skills: [{ name: ".NET" }, { name: "Java" }],
+    title: "Motonic",
+    description: "Gestor de talleres mecanicos de motocicletas.",
+    imageUrl: "./motonic/motonic.png",
+    skills: [{ name: "Python" }, { name: "React" }, {name: "MySQL"},{name: "Javascript"}, {name: "HTML"}, {name: "CSS"}],
+    link: "/motonic",
+    details: "Motonic es un sistema de gestión diseñado para talleres mecánicos de motocicletas. Desarrollado con Python en el backend y React en el frontend, este proyecto ofrece una solución integral para administrar las operaciones diarias de un taller. Con una base de datos MySQL, Motonic permite a los usuarios gestionar clientes, vehículos, órdenes de trabajo y stock de manera eficiente. La interfaz de usuario es intuitiva y fácil de navegar, lo que facilita la adopción del sistema por parte del personal del taller.",
+    github: "https://github.com/Duvarax/motonic",
+    images: ["./motonic/login.png", "./motonic/register.png",  "./motonic/clientes.png", "./motonic/motos.png", "./motonic/stock.png"],
   },
   {
     id: 3,
